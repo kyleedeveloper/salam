@@ -16,7 +16,6 @@ global.client = client;
 client.commands = (global.commands = []);
 
 const { readdirSync } = require("fs")
-const { TOKEN } = require("./config.json");
 readdirSync('./commands').forEach(f => {
   if(!f.endsWith(".js")) return;
 
@@ -247,3 +246,5 @@ client.on('messageCreate', async message => {
   else {
    return;
  }})
+
+client.login(process.env.token);
